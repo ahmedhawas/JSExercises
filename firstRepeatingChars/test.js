@@ -17,12 +17,12 @@ test('firstRepeatingChars called with no repeats', () => {
   expect(result).toEqual(null);
 });
 
-test('firstRepeatingChars called with n = 2', () => {
+test('firstRepeatingChars called with one recurring char', () => {
   result = firstRepeatingChars("ABCA");
   expect(result).toEqual("A");
 });
 
-test('firstRepeatingChars called with n = 3', () => {
+test('firstRepeatingChars called with multiple recurring chars', () => {
   result = firstRepeatingChars("BCABA");
   expect(result).toEqual("B");
 });
