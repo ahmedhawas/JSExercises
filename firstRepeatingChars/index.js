@@ -4,7 +4,7 @@
 // eg "ABCAB" ---> 'AB'
 // eg "ABCD"  ---> null
 
-function firtRepeatingChars(n) {
+function firstRepeatingChars(n) {
 }
 
-module.exports = firtRepeatingChars;
+module.exports = firstRepeatingChars;
