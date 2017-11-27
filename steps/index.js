@@ -17,21 +17,21 @@
 //       '### '
 //       '####'
 
-function steps(n) {
+function generateHashString(i, n) {
   let result = "";
-
-  for (let i = 1; i <= n; i ++) {
-    let currentLine = "";
-    let j = 1;
-    while (j <= n) {
-      currentLine = j <= i ? currentLine + "#" : currentLine + " "
-      j++;
-    }
-
-    result = i === n ? result + currentLine : result + currentLine + "\n"
+  for (let j = 1; j <= i; j++) {
+    result = result + "#";
   }
+  for (let k = 1; k <= n-i; k++) {
+    result = result + " ";
+  }
+  return result;
+}
 
-  console.log(result);
+function steps(n) {
+  for (let i = 1; i <= n; i++) {
+    console.log(generateHashString(i, n));
+  }
 }
 
 module.exports = steps;
