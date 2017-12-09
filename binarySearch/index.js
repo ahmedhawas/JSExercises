@@ -7,17 +7,46 @@ function binarySearch(array, value) {
         min = 0,
         max = array.length - 1;
 
-    while(min <= max){
-      guess = Math.floor((min + max) /2);
-    	if(array[guess] === value)
+    while (min <= max) {
+      guess = Math.floor((min + max)/2);
+
+      const guessValue = array[guess];
+      if (guessValue === value) {
         return guess;
-    	else if(array[guess] < value)
-        min = guess + 1;
-    	else
+      } else if (guessValue > value) {
+        // left
         max = guess - 1;
+      } else {
+        // right
+        min = guess + 1;
+      }
     }
 
-     return -1;
+    return -1;
 }
 
 module.exports = binarySearch;
+
+// // Simple binary search algo of a sorted list
+// returns the index or -1 if not found
+// [1,2,3]
+//
+// function binarySearch(array, value) {
+//     let guess,
+//         min = 0,
+//         max = array.length - 1;
+//
+//     while(min <= max){
+//       guess = Math.floor((min + max) /2);
+//     	if(array[guess] === value)
+//         return guess;
+//     	else if(array[guess] < value)
+//         min = guess + 1;
+//     	else
+//         max = guess - 1;
+//     }
+//
+//      return -1;
+// }
+//
+// module.exports = binarySearch;

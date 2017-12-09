@@ -17,21 +17,37 @@
 //       '### '
 //       '####'
 
-function generateHashString(i, n) {
-  let result = "";
-  for (let j = 1; j <= i; j++) {
-    result = result + "#";
-  }
-  for (let k = 1; k <= n-i; k++) {
-    result = result + " ";
-  }
-  return result;
-}
 
 function steps(n) {
-  for (let i = 1; i <= n; i++) {
-    console.log(generateHashString(i, n));
+  for (let row = 1; row <= n; row++) {
+    let step = '';
+    for (let col = 1; col <= n; col++) {
+      if ( col  <= row) {
+        step += '#';
+      } else {
+        step += ' ';
+      }
+    }
+    console.log(step);
   }
 }
+
+
+// function generateHashString(i, n) {
+//   let result = "";
+//   for (let j = 1; j <= i; j++) {
+//     result = result + "#";
+//   }
+//   for (let k = 1; k <= n-i; k++) {
+//     result = result + " ";
+//   }
+//   return result;
+// }
+//
+// function steps(n) {
+//   for (let i = 1; i <= n; i++) {
+//     console.log(generateHashString(i, n));
+//   }
+// }
 
 module.exports = steps;
